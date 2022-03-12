@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>NG.Fractals</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Fractals\" />
+    <None Remove="FractalMath\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Fractals\" />
+    <Folder Include="FractalMath\" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="NG.Fractals.XamarinApp.PropertyEditViews.IntegerPropertyEditView">
+    <StackLayout Orientation="Vertical">
+        <Label x:Name="TitleLabel"/>
+        <StackLayout Orientation="Horizontal" Spacing="8">
+            <Button Text="-" VerticalOptions="Center" Clicked="MinusButton_Clicked"/>
+            <Button Text="+" VerticalOptions="Center" Clicked="PlusButton_Clicked"/>
+            <Label x:Name="ValueLabel" VerticalOptions="Center"/>
+        </StackLayout>
+    </StackLayout>
+</ContentView>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+    x:Class="NG.Fractals.XamarinApp.FractalPage">
+    <Grid RowDefinitions="*,*">
+        <skia:SKCanvasView Grid.Row="0" x:Name="SkiaCanvas" BackgroundColor="Black" PaintSurface="SKCanvasView_PaintSurface"/>
+        <Grid Grid.Row="1" BackgroundColor="#dddddd">
+            <ScrollView>
+                <StackLayout x:Name="PropertyStack" Orientation="Vertical" Margin="16,8" Spacing="8"/>
+            </ScrollView>
+        </Grid>
+    </Grid>
+</ContentPage>
