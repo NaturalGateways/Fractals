@@ -16,7 +16,7 @@
     <PackageReference Include="SkiaSharp.Views.Forms" Version="2.80.3" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\NG.Fractals.Core\NG.Fractals.Core.csproj" />
+    <ProjectReference Include="..\NG.Fractals.Core\NG.Fractals.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="SkiaSharp.Views.Forms" />

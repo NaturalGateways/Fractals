@@ -13,13 +13,23 @@ namespace NG.Fractals.XamarinApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FractalListViewPage : ContentPage
     {
-        public ObservableCollection<FractalListItemViewModel> Items { get; set; }
+        private IFractal[] m_fractalArray = null;
+
+        public ObservableCollection<string> Items { get; set; }
 
         public FractalListViewPage()
         {
             InitializeComponent();
 
-            Items = new ObservableCollection<FractalListItemViewModel>(FractalFactory.CreateFractals().Select(x => new FractalListItemViewModel(x)));
+            m_fractalArray = FractalFactory.CreateFractals();
+#if DEBUG
+            Items = new ObservableCollection<string>(new string[]
+                {
+                    FractalFactory.CreateSingleFractal().FractalName
+                });
+#else
+            Items = new ObservableCollection<string>(m_fractalArray.Select(x => x.FractalName).ToArray());
+#endif
 
             MyListView.ItemsSource = Items;
         }
@@ -27,12 +37,16 @@ namespace NG.Fractals.XamarinApp
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             // Check selected fractal
-            FractalListItemViewModel selectedVM = e.Item as FractalListItemViewModel;
-            if (selectedVM == null)
+            string selectedFractalName = e.Item as string;
+            if (selectedFractalName == null)
                 return;
 
             // Go to fractal
-            await this.Navigation.PushAsync(new FractalPage(selectedVM.Fractal));
+            IFractal selectedFractal = m_fractalArray.FirstOrDefault(x => x.FractalName == selectedFractalName);
+            if (selectedFractal != null)
+            {
+                await this.Navigation.PushAsync(new FractalPage(selectedFractal));
+            }
 
             //Deselect Item
             ((ListView)sender).SelectedItem = null;

@@ -11,7 +11,7 @@
     <!--Built in Cells-->
     <ListView.ItemTemplate>
         <DataTemplate>
-            <TextCell Text="{Binding FractalName}" />
+            <TextCell Text="{Binding .}" />
         </DataTemplate>
     </ListView.ItemTemplate>
     

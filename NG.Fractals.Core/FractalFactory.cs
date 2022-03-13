@@ -6,7 +6,7 @@ namespace NG.Fractals
     {
         public static IFractal CreateSingleFractal()
         {
-            return new HeighwayDragonFractal();
+            return new PlasmaFractal();
         }
 
         public static IFractal[] CreateFractals()
@@ -14,7 +14,10 @@ namespace NG.Fractals
             return new IFractal[]
             {
                 new KochSnowflakeFractal(),
-                new HeighwayDragonFractal()
+                new HeighwayDragonFractal(),
+                new SierpinskiTriangleFractal(),
+                new SierpinskiCarpetFractal(),
+                new PlasmaFractal()
             };
         }
     }

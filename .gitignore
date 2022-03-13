@@ -1,2 +1,10 @@
-
+NG.Fractals.Core/bin
+NG.Fractals.Core/obj
+NG.Fractals.XamarinApp/bin
+NG.Fractals.XamarinApp/obj
+NG.Fractals.XamarinApp.Android/bin
+NG.Fractals.XamarinApp.Android/obj
+NG.Fractals.XamarinApp.iOS/bin
+NG.Fractals.XamarinApp.iOS/obj
 .DS_Store
+.vs
